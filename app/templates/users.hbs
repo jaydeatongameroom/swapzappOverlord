@@ -1,0 +1,13 @@
+{{#each model as |user|}}
+{{user.fullName}} {{user.username}} {{#link-to 'user' user}}Go To{{/link-to}}
+<br />
+{{/each}}
+{{#link-to 'users' (query-params per_page="5")}}5{{/link-to}}
+{{#link-to 'users' (query-params per_page="10")}}10{{/link-to}}
+{{#link-to 'users' (query-params per_page="50")}}50{{/link-to}}
+<br />
+{{#link-to 'users' (query-params page="1")}}1{{/link-to}}
+{{#link-to 'users' (query-params page="2")}}2{{/link-to}}
+
+<a {{action 'next'}}>Next</a>
+<a {{action 'prev'}}>Previous</a>
